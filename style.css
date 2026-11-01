@@ -1,0 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: transparent;
+    cursor: none;
+}
+
+a, .menu, #name {
+    cursor: none !important;
+}
+
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: black;
+}
+
+#name {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+#name:hover {
+    color: rgb(0, 255, 0);
+}
+
+#rasm {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    user-select: none;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.25);
+}
+
+#i {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 40px;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+    transition: color 0.4s ease;
+}
+
+.cursor {
+    animation: blink 0.8s infinite;
+    color: rgb(0, 255, 0);
+    margin-left: 3px;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.menu {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu:hover a {
+    color: rgb(0, 255, 0);
+}
+
+@media (max-width: 600px) {
+    #name { font-size: 1.8rem; margin-top: 40px; }
+    #rasm { width: 180px; height: 180px; }
+    #i { font-size: 1.1rem; }
+    .menu { font-size: 1rem; margin-top: 25px; }
+}
