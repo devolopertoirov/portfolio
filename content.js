@@ -1,0 +1,52 @@
+// Barcha matnlar shu yerda. Tartib: [uz, ru, en]
+window.SITE = {
+    // Bog'lanish formasi uchun Cloudflare Worker manzili (worker.js ga qarang). Bo'sh bo'lsa, forma Telegramga yo'naltiradi.
+    FORM_URL: '',
+    INTRO: ['Wake up, Diyorbek...', 'The Matrix has you...', 'Follow the green rain.'],
+    SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
+    // [nom, bot username, [uz, ru, en], ishlayaptimi: 1 yoki 0]
+    PROJECTS: [
+        ['SafeApkGuardBot', 'SafeApkGuardBot', ["Chatga kelgan xavfli .apk fayllarni aniqlaydi, o'chiradi va sizni ogohlantiradi.", 'Находит опасные .apk в чате, удаляет их и предупреждает вас.', 'Detects dangerous .apk files in chat, deletes them and warns you.'], 0],
+        ['ProSavedFBot', 'ProSavedFBot', ["Instagram va TikTok videolarini asl sifatida yuklab beradi.", 'Скачивает видео из Instagram и TikTok в исходном качестве.', 'Downloads Instagram and TikTok videos in original quality.'], 0],
+        ['Ob-havo bot', 'OB_HAVO_KUNDALIK_BOT', ["Har kuni 07:00 da ob-havo: harorat, yomg'ir, qor. 3 tilda.", 'Погода каждый день в 07:00: температура, дождь, снег. На 3 языках.', 'Daily 07:00 weather: temperature, rain, snow. In 3 languages.'], 0],
+        ['Quiz bot', 'Quiz_pul_bot', ["10 ta savolga to'g'ri javob bering va yutuq oling.", 'Ответьте верно на 10 вопросов и получите выигрыш.', 'Answer 10 questions correctly and win a prize.'], 0],
+        ['Kino bot', 'KINOLAR_N1_UZ_BOT', ["Kino, serial va multfilmlar. Premium obuna tizimi bilan.", 'Фильмы, сериалы и мультфильмы. С системой Premium-подписки.', 'Movies, series and cartoons with a Premium subscription system.'], 0],
+        ['Ovoz → matn bot', 'Voice_to_tex_uz_bot', ["Video yoki ovozli xabarni matnga aylantiradi.", 'Превращает видео и голосовые сообщения в текст.', 'Turns video and voice messages into text.'], 0],
+        ['Valyuta kalkulyator', 'DOLLARKALKULATORBOT', ["Dollar, rubl va so'm o'rtasida tezkor hisoblash.", 'Быстрый расчёт между долларом, рублём и сумом.', 'Quick conversion between dollar, ruble and som.'], 0],
+        ['Tarjima bot', '', ["Ingliz, Rus, Koreys, Arab va 20+ tilda tarjima.", 'Перевод на английский, русский, корейский, арабский и 20+ языков.', 'Translation into English, Russian, Korean, Arabic and 20+ languages.'], 0],
+    ],
+    SVC: [
+        [['AI chatbot', 'ChatGPT kabi aqlli bot'], ['AI-чатбот', 'Умный бот как ChatGPT'], ['AI chatbot', 'Smart bot like ChatGPT']],
+        [["To'lov tizimi", "Click va Payme orqali to'lov qabul qilish"], ['Платёжная система', 'Приём оплаты через Click и Payme'], ['Payments', 'Accept payments via Click and Payme']],
+        [['Admin panel', 'Botni qulay boshqarish paneli'], ['Админ-панель', 'Удобная панель управления ботом'], ['Admin panel', 'Easy bot management panel']],
+        [['Kanal va buyurtma botlari', 'Yangiliklar boti, buyurtma qabul qilish boti'], ['Каналы и заказы', 'Новостные боты и боты для приёма заказов'], ['Channel and order bots', 'News bots and order-taking bots']],
+    ],
+    ART: [
+        [['Soxta APK fayllar qanday ishlaydi', "Firibgarlar «Sud chaqiruvi», «To'ydan rasmlar», «Bayramga taklifnoma» kabi nomlar bilan .apk fayl yuboradi. O'rnatsangiz, bank kartalari, parollar va rasmlaringiz xavf ostida qoladi."],
+         ['Как работают поддельные APK', 'Мошенники присылают .apk под названиями вроде «Повестка в суд» или «Фото со свадьбы». После установки под угрозой банковские карты, пароли и фото.'],
+         ['How fake APK files work', 'Scammers send .apk files named like «Court summons» or «Wedding photos». Once installed, your bank cards, passwords and photos are at risk.']],
+        [['Qanday himoyalanish', "Telegramdan kelgan .apk faylni o'rnatmang, hatto tanishdan kelsa ham: avval o'sha odamga qo'ng'iroq qiling. Ota-onangiz va yaqinlaringizga ham ayting."],
+         ['Как защититься', 'Не устанавливайте .apk из Telegram, даже от знакомых: сначала позвоните этому человеку. Расскажите об этом родителям и близким.'],
+         ['How to stay safe', "Never install an .apk from Telegram, even from someone you know: call that person first. Tell your parents and relatives too."]],
+        [["SafeApkGuardBot'ni ulash", "Telegram → Sozlamalar → Profil → Profilni tahrirlash → Chatlarni avtomatlashtirish → @SafeApkGuardBot ni qo'shing. Xavfli fayl topilsa, bot uni chatdan o'chiradi."],
+         ['Подключение SafeApkGuardBot', 'Telegram → Настройки → Профиль → Изменить профиль → Автоматизация чатов → добавьте @SafeApkGuardBot. Опасный файл бот удалит из чата.'],
+         ['Connecting SafeApkGuardBot', 'Telegram → Settings → Profile → Edit profile → Chat automation → add @SafeApkGuardBot. If a dangerous file is found, the bot deletes it from the chat.']],
+    ],
+    T: {
+        uz: { ph: ['Full stack dasturchi', 'Telegram botlar', 'Web saytlar', 'Telegram mini applar'], m1: "Bog'lanish", m2: 'Telegram kanal', s1: 'bot loyiha', s2: 'tilda tarjima', s3: 'tilda ob-havo',
+            h_sk: "Ko'nikmalar", h_pr: 'Loyihalar', h_sv: 'Xizmatlar', h_yt: 'YouTube', h_ar: 'Maqolalar', h_te: 'Terminal', h_co: 'Yozing',
+            note: "$50 dan · 3–14 kun · sifat kafolatli. API kalitlar va server xarajatlari alohida.", order: 'Buyurtma berish', about: "Toirov Diyorbek: full stack dasturchi. Telegram botlar, web saytlar va mini applar yasayman.",
+            live: 'Ishlamoqda', code: 'Kod tayyor', yt_d: "TOIROV PRIME strimlarida Telegram bot yasaymiz va Kali Linux (kiberxavfsizlik) o'rganamiz.", yt_b: 'YouTube kanalga o\'tish',
+            f_n: 'Ismingiz', f_c: 'Telegram yoki telefon', f_m: 'Qanday bot yoki sayt kerak?', f_s: 'Yuborish', sent: 'Yuborildi, tez orada javob beraman!', fb: 'Telegram ochildi, xabarni u yerda yuboring.', foot: 'Bot buyurtma qilish:' },
+        ru: { ph: ['Full stack разработчик', 'Telegram-боты', 'Веб-сайты', 'Telegram Mini Apps'], m1: 'Связаться', m2: 'Telegram-канал', s1: 'ботов', s2: 'языков перевода', s3: 'языка погоды',
+            h_sk: 'Навыки', h_pr: 'Проекты', h_sv: 'Услуги', h_yt: 'YouTube', h_ar: 'Статьи', h_te: 'Терминал', h_co: 'Напишите',
+            note: 'От $50 · 3–14 дней · гарантия качества. API-ключи и сервер оплачиваются отдельно.', order: 'Заказать', about: 'Тоиров Дийорбек: full stack разработчик. Делаю Telegram-ботов, сайты и мини-приложения.',
+            live: 'Работает', code: 'Код готов', yt_d: 'На стримах TOIROV PRIME делаем Telegram-ботов и изучаем Kali Linux (кибербезопасность).', yt_b: 'Перейти на YouTube',
+            f_n: 'Ваше имя', f_c: 'Telegram или телефон', f_m: 'Какой бот или сайт нужен?', f_s: 'Отправить', sent: 'Отправлено, скоро отвечу!', fb: 'Открылся Telegram, отправьте сообщение там.', foot: 'Заказать бота:' },
+        en: { ph: ['Full stack developer', 'Telegram bots', 'Websites', 'Telegram Mini Apps'], m1: 'Contact', m2: 'Telegram channel', s1: 'bot projects', s2: 'translation languages', s3: 'weather languages',
+            h_sk: 'Skills', h_pr: 'Projects', h_sv: 'Services', h_yt: 'YouTube', h_ar: 'Articles', h_te: 'Terminal', h_co: 'Get in touch',
+            note: 'From $50 · 3–14 days · quality guaranteed. API keys and server costs are separate.', order: 'Order now', about: 'Toirov Diyorbek: full stack developer. I build Telegram bots, websites and mini apps.',
+            live: 'Live', code: 'Code ready', yt_d: 'On TOIROV PRIME streams we build Telegram bots and learn Kali Linux (cybersecurity).', yt_b: 'Open YouTube channel',
+            f_n: 'Your name', f_c: 'Telegram or phone', f_m: 'What bot or site do you need?', f_s: 'Send', sent: "Sent, I'll reply soon!", fb: 'Telegram opened, send the message there.', foot: 'Order a bot:' },
+    },
+};

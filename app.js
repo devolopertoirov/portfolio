@@ -2,22 +2,11 @@ window.addEventListener('load', () => {
     const $ = s => document.querySelector(s);
     const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-    // ====== MA'LUMOTLAR (shu yerni o'zingiz tahrirlang) ======
-    // [nom, bot username, tavsif, ishlayaptimi (1 = ha, 0 = kod tayyor)]
-    const PROJECTS = [
-        ['SafeApkGuardBot', 'SafeApkGuardBot', "Chatga kelgan xavfli .apk fayllarni aniqlaydi, o'chiradi va sizni ogohlantiradi.", 0],
-        ['ProSavedFBot', 'ProSavedFBot', "Instagram va TikTok videolarini asl sifatida yuklab beradi.", 0],
-        ['Ob-havo bot', 'OB_HAVO_KUNDALIK_BOT', "Har kuni 07:00 da ob-havo: harorat, yomg'ir, qor. O'zbek, Rus, Ingliz tillarida.", 0],
-        ['Quiz bot', 'Quiz_pul_bot', "10 ta savolga to'g'ri javob bering va yutuq oling.", 0],
-        ['Kino bot', 'KINOLAR_N1_UZ_BOT', "Kino, serial va multfilmlar. Premium obuna tizimi bilan.", 0],
-        ['Ovoz → matn bot', 'Voice_to_tex_uz_bot', "Video yoki ovozli xabarni matnga aylantiradi.", 0],
-        ['Valyuta kalkulyator', 'DOLLARKALKULATORBOT', "Dollar, rubl va so'm o'rtasida tezkor hisoblash.", 0],
-        ['Tarjima bot', '', "Ingliz, Rus, Koreys, Arab va 20+ tilda tarjima.", 0],
-        ['AI chatbot va boshqalar', '', "Buyurtma bo'yicha: AI chatbot, to'lov tizimi (Click, Payme), admin panel.", 0],
-    ];
-    const SKILLS = ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'];
-    const INTRO = ['Wake up, Diyorbek...', 'The Matrix has you...', 'Follow the green rain.'];
-    const PHRASES = ['Full stack dasturchi', 'Telegram botlar', 'Web saytlar', 'Telegram mini applar'];
+    const { PROJECTS, SKILLS, INTRO, SVC, ART, FORM_URL, T } = SITE;
+    let status = {}, lang = 'uz';
+    try { lang = localStorage.getItem('lang') || (/^ru/.test(navigator.language) ? 'ru' : /^en/.test(navigator.language) ? 'en' : 'uz'); } catch (e) {}
+    const t = k => T[lang][k];
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // ====== RANGLAR ======
     const themes = { green: '0,255,0', blue: '0,180,255', red: '255,40,60' };
@@ -36,7 +25,7 @@ window.addEventListener('load', () => {
     // ====== MATRIX YOMG'IRI ======
     const cv = $('#matrixCanvas'), ctx = cv.getContext('2d');
     const chars = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-    const fs = 16;
+    const fs = innerWidth < 600 ? 20 : 16;
     let drops = [], ripples = [], speed = 1, mx = -999, my = -999;
 
     function resize() {
@@ -70,7 +59,7 @@ window.addEventListener('load', () => {
             if (p.a <= 0) ripples.splice(r, 1);
         }
     }
-    setInterval(draw, 30);
+    setInterval(() => { if (!document.hidden && !reduce) draw(); }, 30);
 
     // ====== KURSOR, SICHQONCHA VA TOUCH ======
     const dot = $('#dot'), ring = $('#ring');
@@ -107,7 +96,7 @@ window.addEventListener('load', () => {
     async function typeLoop() {
         let k = 0;
         for (;;) {
-            const p = PHRASES[k++ % PHRASES.length];
+            const ph = t('ph'), p = ph[k++ % ph.length];
             for (let j = 1; j <= p.length; j++) { el.innerHTML = p.slice(0, j) + '<span class="cursor">|</span>'; await sleep(70); }
             await sleep(1400);
             for (let j = p.length; j >= 0; j--) { el.innerHTML = p.slice(0, j) + '<span class="cursor">|</span>'; await sleep(35); }
@@ -133,20 +122,39 @@ window.addEventListener('load', () => {
         typeLoop();
     })();
 
-    // ====== KO'NIKMALAR VA LOYIHALAR ======
-    $('#tags').innerHTML = SKILLS.map(s => `<span>${s}</span>`).join('');
-    $('#grid').innerHTML = PROJECTS.map(([name, user, desc, live]) => `
-        <a class="card" href="https://t.me/${user || 'devoloper_toirov'}" target="_blank" rel="noopener">
-            <h3>${name}</h3><p>${desc}</p>
-            <small class="${live ? 'live' : ''}">${live ? '● Ishlamoqda' : 'Kod tayyor'}${user ? ' · @' + user : ''}</small>
-        </a>`).join('');
-    document.querySelectorAll('.card').forEach(c => {
+    // ====== KONTENT (til yoki status o'zgarsa qayta chiziladi) ======
+    function tilt(c) {
         c.onmousemove = e => {
             const b = c.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5;
             c.style.transform = `perspective(600px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg)`;
         };
         c.onmouseleave = () => c.style.transform = '';
+    }
+    function render() {
+        const i = ['uz', 'ru', 'en'].indexOf(lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i]').forEach(e => e.textContent = t(e.dataset.i));
+        document.querySelectorAll('[data-p]').forEach(e => e.placeholder = t(e.dataset.p));
+        $('#tags').innerHTML = SKILLS.map(s => `<span>${s}</span>`).join('');
+        $('#grid').innerHTML = PROJECTS.map(([name, user, desc, live0]) => {
+            const live = status[user] ?? live0;
+            return `<a class="card" href="https://t.me/${user || 'devoloper_toirov'}" target="_blank" rel="noopener">
+                <h3>${name}</h3><p>${desc[i]}</p>
+                <small class="${live ? 'live' : ''}">${live ? '● ' + t('live') : t('code')}${user ? ' · @' + user : ''}</small></a>`;
+        }).join('');
+        $('#svc').innerHTML = SVC.map(x => `<div class="card"><h3>${x[i][0]}</h3><p>${x[i][1]}</p></div>`).join('');
+        $('#art').innerHTML = ART.map(a => `<details><summary>${a[i][0]}</summary><p>${a[i][1]}</p></details>`).join('');
+        document.querySelectorAll('#grid .card').forEach(tilt);
+        document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
+    }
+    document.querySelectorAll('.lang button').forEach(b => b.onclick = () => {
+        lang = b.dataset.l;
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        render();
     });
+    render();
+    // Bot holati: status.json faylida {"BotUsername": 1} yozing
+    fetch('status.json').then(r => r.json()).then(j => { status = j; render(); }).catch(() => {});
 
     // ====== RAQAMLAR SANALISHI ======
     const io = new IntersectionObserver(es => es.forEach(e => {
@@ -166,7 +174,7 @@ window.addEventListener('load', () => {
     const out = $('#out'), inp = $('#cmd');
     const CMD = {
         help: () => 'help, about, skills, projects, contact, color <green|blue|red>, clear',
-        about: () => "Toirov Diyorbek: full stack dasturchi. Telegram botlar, web saytlar va mini applar yasayman.",
+        about: () => t('about'),
         skills: () => SKILLS.join(', '),
         projects: () => PROJECTS.map(p => '- ' + p[0]).join('\n'),
         contact: () => 'Telegram: @devoloper_toirov',
@@ -182,6 +190,21 @@ window.addEventListener('load', () => {
         else if (v) r = `Noma'lum buyruq: ${v}. "help" deb yozing.`;
         out.textContent += `$ ${v}\n` + (r ? r + '\n' : '');
         out.scrollTop = out.scrollHeight;
+    };
+
+    // ====== BOG'LANISH FORMASI ======
+    $('#form').onsubmit = async e => {
+        e.preventDefault();
+        const f = e.target.elements, d = { name: f.n.value, contact: f.c.value, msg: f.m.value }, st = $('#fstat');
+        try {
+            if (!FORM_URL) throw 0;
+            const r = await fetch(FORM_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
+            if (!r.ok) throw 0;
+            st.textContent = t('sent'); e.target.reset();
+        } catch (x) {
+            open('https://t.me/devoloper_toirov?text=' + encodeURIComponent(`${d.name} (${d.contact}): ${d.msg}`), '_blank');
+            st.textContent = t('fb');
+        }
     };
 
     // ====== YASHIRIN SIR: Konami kodi ======

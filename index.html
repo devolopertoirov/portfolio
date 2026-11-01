@@ -10,39 +10,60 @@
     <meta property="og:image" content="img.jpg">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <link rel="stylesheet" href="style.css">
+    <!-- Statistika: Umami yoki Plausible ro'yxatdan o'tgach, ular bergan <script> ni shu yerga qo'ying -->
+    <script src="content.js" defer></script>
     <script src="app.js" defer></script>
 </head>
 <body>
     <div id="intro"></div>
     <canvas id="matrixCanvas"></canvas>
     <div id="dot"></div><div id="ring"></div>
-    <button id="theme" title="Rangni almashtirish">◐</button>
+    <div class="lang"><button data-l="uz">UZ</button><button data-l="ru">RU</button><button data-l="en">EN</button></div>
+    <button id="theme" title="Color">◐</button>
 
     <section class="hero">
         <h1 id="name" data-v="Toirov Diyorbek">Toirov Diyorbek</h1>
         <img src="img.jpg" alt="Toirov Diyorbek" id="rasm">
         <h4 id="i"></h4>
         <div class="row">
-            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">Bog'lanish</a></div>
-            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">Telegram kanal</a></div>
+            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="m1"></a></div>
+            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="m2"></a></div>
         </div>
         <div class="row stats">
-            <div><b class="n" data-t="9">0</b><span>bot loyiha</span></div>
-            <div><b class="n" data-t="20" data-s="+">0</b><span>tilda tarjima</span></div>
-            <div><b class="n" data-t="3">0</b><span>tilda ob-havo</span></div>
+            <div><b class="n" data-t="9">0</b><span data-i="s1"></span></div>
+            <div><b class="n" data-t="20" data-s="+">0</b><span data-i="s2"></span></div>
+            <div><b class="n" data-t="3">0</b><span data-i="s3"></span></div>
         </div>
     </section>
 
-    <section><h2>Ko'nikmalar</h2><div class="tags" id="tags"></div></section>
-    <section><h2>Loyihalar</h2><div class="grid" id="grid"></div></section>
+    <section><h2 data-i="h_sk"></h2><div class="tags" id="tags"></div></section>
+    <section><h2 data-i="h_pr"></h2><div class="grid" id="grid"></div></section>
     <section>
-        <h2>Terminal</h2>
-        <div id="term">
-            <div id="out">"help" deb yozing va Enter bosing.
-</div>
-            <label>$ <input id="cmd" autocomplete="off" spellcheck="false" aria-label="Buyruq"></label>
-        </div>
+        <h2 data-i="h_sv"></h2><div class="grid" id="svc"></div>
+        <p class="note" data-i="note"></p>
+        <a class="btn" href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="order"></a>
     </section>
-    <footer>Bot buyurtma qilish: $50 dan, 3–14 kun. Yozing: <a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">@devoloper_toirov</a></footer>
+    <section>
+        <h2 data-i="h_yt"></h2>
+        <div class="card yt"><h3>DEVELOPER_TOIROV</h3><p data-i="yt_d"></p>
+            <a class="btn" href="https://www.youtube.com/@DEVELOPER_TOIROV" target="_blank" rel="noopener" data-i="yt_b"></a></div>
+    </section>
+    <section><h2 data-i="h_ar"></h2><div id="art"></div></section>
+    <section>
+        <h2 data-i="h_te"></h2>
+        <div id="term"><div id="out"></div>
+            <label>$ <input id="cmd" autocomplete="off" spellcheck="false" placeholder="help" aria-label="Command"></label></div>
+    </section>
+    <section>
+        <h2 data-i="h_co"></h2>
+        <form id="form">
+            <input name="n" required maxlength="60" data-p="f_n">
+            <input name="c" required maxlength="80" data-p="f_c">
+            <textarea name="m" required maxlength="1000" rows="4" data-p="f_m"></textarea>
+            <button class="btn" type="submit" data-i="f_s"></button>
+            <p id="fstat" class="note"></p>
+        </form>
+    </section>
+    <footer><span data-i="foot"></span> <a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">@devoloper_toirov</a></footer>
 </body>
 </html>
