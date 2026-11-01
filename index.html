@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Toirov Diyorbek | Telegram bot dasturchi</title>
+    <meta name="description" content="Full stack dasturchi: Telegram botlar, web saytlar va Telegram mini applar.">
+    <meta property="og:title" content="Toirov Diyorbek | Portfolio">
+    <meta property="og:description" content="Telegram botlar, web saytlar, mini applar">
+    <meta property="og:image" content="img.jpg">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1 id="name">Toirov Diyorbek</h1>
-    <img src="img.jpg" alt="Rasm" id="rasm">
-    <h4 id="i"></h4>
-
+    <div id="intro"></div>
     <canvas id="matrixCanvas"></canvas>
-    <div style="text-align: center;">
-        <div class="menu" id="boglanish"><a href="https://t.me" target="_blank">Bog'lanish</a></div>
-        <div class="menu" id="channel"><a href="https://t.me" target="_blank">Telegram kanal</a></div>
-    </div>
+    <div id="dot"></div><div id="ring"></div>
+    <button id="theme" title="Rangni almashtirish">◐</button>
+
+    <section class="hero">
+        <h1 id="name" data-v="Toirov Diyorbek">Toirov Diyorbek</h1>
+        <img src="img.jpg" alt="Toirov Diyorbek" id="rasm">
+        <h4 id="i"></h4>
+        <div class="row">
+            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">Bog'lanish</a></div>
+            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">Telegram kanal</a></div>
+        </div>
+        <div class="row stats">
+            <div><b class="n" data-t="9">0</b><span>bot loyiha</span></div>
+            <div><b class="n" data-t="20" data-s="+">0</b><span>tilda tarjima</span></div>
+            <div><b class="n" data-t="3">0</b><span>tilda ob-havo</span></div>
+        </div>
+    </section>
+
+    <section><h2>Ko'nikmalar</h2><div class="tags" id="tags"></div></section>
+    <section><h2>Loyihalar</h2><div class="grid" id="grid"></div></section>
+    <section>
+        <h2>Terminal</h2>
+        <div id="term">
+            <div id="out">"help" deb yozing va Enter bosing.
+</div>
+            <label>$ <input id="cmd" autocomplete="off" spellcheck="false" aria-label="Buyruq"></label>
+        </div>
+    </section>
+    <footer>Bot buyurtma qilish: $50 dan, 3–14 kun. Yozing: <a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">@devoloper_toirov</a></footer>
 </body>
 </html>
