@@ -3,7 +3,7 @@ window.SITE = {
     // Bog'lanish formasi uchun Cloudflare Worker manzili (worker.js ga qarang). Bo'sh bo'lsa, forma Telegramga yo'naltiradi.
     FORM_URL: '',
     INTRO: ['Wake UP!!!', 'The Matrix has you...', 'Follow the green rain.'],
-    SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'PYTHON / SQLITE 3 / HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
+    SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'SQLITE 3', 'HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
     // [nom, bot username, [uz, ru, en], ishlayaptimi: 1 yoki 0]
     PROJECTS: [
         ['SafeApkGuardBot', 'SafeApkGuardBot', ["Chatga kelgan xavfli .apk fayllarni aniqlaydi, o'chiradi va sizni ogohlantiradi.", 'Находит опасные .apk в чате, удаляет их и предупреждает вас.', 'Detects dangerous .apk files in chat, deletes them and warns you.'], 1],
