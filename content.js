@@ -2,7 +2,7 @@
 window.SITE = {
     // Bog'lanish formasi uchun Cloudflare Worker manzili (worker.js ga qarang). Bo'sh bo'lsa, forma Telegramga yo'naltiradi.
     FORM_URL: '',
-    INTRO: ['The Matrix has you...', 'Follow the green rain.'],
+    INTRO: ['Wake UP!!!', 'The Matrix has you...', 'Follow the green rain.'],
     SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'PYTHON / SQLITE 3 / HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
     // [nom, bot username, [uz, ru, en], ishlayaptimi: 1 yoki 0]
     PROJECTS: [
