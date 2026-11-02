@@ -7,7 +7,13 @@
     <meta name="description" content="Full stack dasturchi: Telegram botlar, web saytlar va Telegram mini applar.">
     <meta property="og:title" content="Toirov Diyorbek | Portfolio">
     <meta property="og:description" content="Telegram botlar, web saytlar, mini applar">
-    <meta property="og:image" content="img.jpg">
+    <meta property="og:image" content="https://devolopertoirov.github.io/portfolio/img.jpg">
+    <meta property="og:url" content="https://devolopertoirov.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://devolopertoirov.github.io/portfolio/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Toirov Diyorbek","jobTitle":"Full stack dasturchi","url":"https://devolopertoirov.github.io/portfolio/","sameAs":["https://github.com/devolopertoirov","https://t.me/devoloper_toirov","https://www.youtube.com/@DEVELOPER_TOIROV"]}</script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <link rel="stylesheet" href="style.css">
     <!-- Statistika: Umami yoki Plausible ro'yxatdan o'tgach, ular bergan <script> ni shu yerga qo'ying -->
@@ -23,11 +29,13 @@
 
     <section class="hero">
         <h1 id="name" data-v="Toirov Diyorbek">Toirov Diyorbek</h1>
+        <p class="sr">Full stack dasturchi: Telegram botlar, web saytlar va Telegram mini applar. $50 dan.</p>
         <img src="img.jpg" alt="Toirov Diyorbek" id="rasm">
         <h4 id="i"></h4>
         <div class="row">
-            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="m1"></a></div>
-            <div class="menu"><a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="m2"></a></div>
+            <div class="menu"><a class="btn" href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="m1" data-track="hero_order"></a></div>
+            <div class="menu"><a href="#projects" data-i="m2"></a></div>
+            <div class="menu"><a href="https://github.com/devolopertoirov" target="_blank" rel="noopener">GitHub</a></div>
         </div>
         <div class="row stats">
             <div><b class="n" data-t="9">0</b><span data-i="s1"></span></div>
@@ -37,18 +45,23 @@
     </section>
 
     <section><h2 data-i="h_sk"></h2><div class="tags" id="tags"></div></section>
-    <section><h2 data-i="h_pr"></h2><div class="grid" id="grid"></div></section>
+    <section id="projects"><h2 data-i="h_pr"></h2><div class="grid" id="grid"></div></section>
     <section>
         <h2 data-i="h_sv"></h2><div class="grid" id="svc"></div>
         <p class="note" data-i="note"></p>
-        <a class="btn" href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="order"></a>
+        <a class="btn" href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="order" data-track="svc_order"></a>
     </section>
+    <section>
+        <h2 id="process" data-i="h_pc"></h2><div class="grid steps" id="proc"></div>
+        <h2 data-i="h_pk" style="margin-top:32px"></h2><div class="grid" id="pkg"></div>
+    </section>
+    <section><h2 data-i="h_fq"></h2><div id="faq"></div></section>
     <section>
         <h2 data-i="h_yt"></h2>
         <div class="card yt"><h3>DEVELOPER_TOIROV</h3><p data-i="yt_d"></p>
             <a class="btn" href="https://www.youtube.com/@DEVELOPER_TOIROV" target="_blank" rel="noopener" data-i="yt_b"></a></div>
     </section>
-    <section><h2 data-i="h_ar"></h2><div id="art"></div></section>
+    <section><h2 data-i="h_ar"></h2><div id="art"></div><a class="btn" href="soxta-apk.html" data-i="more"></a></section>
     <section>
         <h2 data-i="h_te"></h2>
         <div id="term"><div id="out"></div>
@@ -60,10 +73,12 @@
             <input name="n" required maxlength="60" data-p="f_n">
             <input name="c" required maxlength="80" data-p="f_c">
             <textarea name="m" required maxlength="1000" rows="4" data-p="f_m"></textarea>
+            <input name="w" tabindex="-1" autocomplete="off" class="sr" aria-hidden="true">
             <button class="btn" type="submit" data-i="f_s"></button>
             <p id="fstat" class="note"></p>
         </form>
     </section>
-    <footer><span data-i="foot"></span> <a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">@devoloper_toirov</a></footer>
+    <footer><span data-i="foot"></span> <a href="https://t.me/devoloper_toirov" target="_blank" rel="noopener">@devoloper_toirov</a> · <a href="https://github.com/devolopertoirov" target="_blank" rel="noopener">GitHub</a></footer>
+    <a id="fab" class="btn" href="https://t.me/devoloper_toirov" target="_blank" rel="noopener" data-i="order" data-track="fab_order"></a>
 </body>
 </html>
