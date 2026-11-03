@@ -2,11 +2,11 @@
 window.SITE = {
     // Bog'lanish formasi uchun Cloudflare Worker manzili (worker.js ga qarang). Bo'sh bo'lsa, forma Telegramga yo'naltiradi.
     FORM_URL: '',
-    INTRO: ['Wake UP!!!', 'The Matrix has you...', 'Follow the green rain.'],
-    SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'SQLITE 3', 'HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
+    INTRO: ['Wake up, Diyorbek...', 'The Matrix has you...', 'Follow the green rain.'],
+    SKILLS: ['Python', 'Telegram Bot API', 'Telegram Mini Apps', 'HTML / CSS / JS', 'AI chatbot', 'Click / Payme', 'Kali Linux', 'Kiberxavfsizlik'],
     // [nom, bot username, [uz, ru, en], ishlayaptimi: 1 yoki 0]
     PROJECTS: [
-        ['SafeApkGuardBot', 'SafeApkGuardBot', ["Chatga kelgan xavfli .apk fayllarni aniqlaydi, o'chiradi va sizni ogohlantiradi.", 'Находит опасные .apk в чате, удаляет их и предупреждает вас.', 'Detects dangerous .apk files in chat, deletes them and warns you.'], 1],
+        ['SafeApkGuardBot', 'SafeApkGuardBot', ["Chatga kelgan xavfli .apk fayllarni aniqlaydi, o'chiradi va sizni ogohlantiradi.", 'Находит опасные .apk в чате, удаляет их и предупреждает вас.', 'Detects dangerous .apk files in chat, deletes them and warns you.'], 0],
         ['ProSavedFBot', 'ProSavedFBot', ["Instagram va TikTok videolarini asl sifatida yuklab beradi.", 'Скачивает видео из Instagram и TikTok в исходном качестве.', 'Downloads Instagram and TikTok videos in original quality.'], 0],
         ['Ob-havo bot', 'OB_HAVO_KUNDALIK_BOT', ["Har kuni 07:00 da ob-havo: harorat, yomg'ir, qor. 3 tilda.", 'Погода каждый день в 07:00: температура, дождь, снег. На 3 языках.', 'Daily 07:00 weather: temperature, rain, snow. In 3 languages.'], 0],
         ['Quiz bot', 'Quiz_pul_bot', ["10 ta savolga to'g'ri javob bering va yutuq oling.", 'Ответьте верно на 10 вопросов и получите выигрыш.', 'Answer 10 questions correctly and win a prize.'], 0],
@@ -39,7 +39,7 @@ window.SITE = {
         [['Topshirish', 'Bot ishga tushiriladi va qanday ishlatish tushuntiriladi.'], ['Сдача', 'Бот запускается, я объясняю, как им пользоваться.'], ['Delivery', 'The bot goes live and I explain how to use it.']],
     ],
     PKG: [
-        [['Oddiy bot', '$5 dan', 'Buyruqlar, tugmalar, oddiy mantiq.'], ['Простой бот', 'от $5', 'Команды, кнопки, простая логика.'], ['Simple bot', 'from $5', 'Commands, buttons, simple logic.']],
+        [['Oddiy bot', '$50 dan', 'Buyruqlar, tugmalar, oddiy mantiq.'], ['Простой бот', 'от $50', 'Команды, кнопки, простая логика.'], ['Simple bot', 'from $50', 'Commands, buttons, simple logic.']],
         [['Bot + admin panel', 'Kelishiladi', 'Botni boshqarish paneli va statistika.'], ['Бот + админ-панель', 'По договорённости', 'Панель управления ботом и статистика.'], ['Bot + admin panel', 'Negotiable', 'Management panel and statistics.']],
         [["Bot + to'lov", 'Kelishiladi', "Click va Payme orqali to'lov, obuna tizimi."], ['Бот + оплата', 'По договорённости', 'Оплата через Click и Payme, подписки.'], ['Bot + payments', 'Negotiable', 'Click and Payme payments, subscriptions.']],
     ],
@@ -51,17 +51,17 @@ window.SITE = {
     T: {
         uz: { ph: ['Full stack dasturchi', 'Telegram botlar', 'Web saytlar', 'Telegram mini applar'], m1: 'Buyurtma berish', m2: 'Loyihalar', s1: 'bot loyiha', s2: 'tilda tarjima', s3: 'tilda ob-havo',
             h_sk: "Ko'nikmalar", h_pc: 'Qanday ishlayman', h_pk: 'Paketlar', h_fq: 'Savollar', more: "To'liq maqola →", skip: "bosing: o'tkazib yuborish", ttl: 'Toirov Diyorbek | Telegram bot dasturchi', dsc: 'Full stack dasturchi: Telegram botlar, web saytlar va Telegram mini applar.', h_pr: 'Loyihalar', h_sv: 'Xizmatlar', h_yt: 'YouTube', h_ar: 'Maqolalar', h_te: 'Terminal', h_co: 'Yozing',
-            note: "$5 dan · 3–14 kun · sifat kafolatli. API kalitlar va server xarajatlari alohida.", order: 'Buyurtma berish', about: "Toirov Diyorbek: full stack dasturchi. Telegram botlar, web saytlar va mini applar yasayman.",
+            note: "$50 dan · 3–14 kun · sifat kafolatli. API kalitlar va server xarajatlari alohida.", order: 'Buyurtma berish', about: "Toirov Diyorbek: full stack dasturchi. Telegram botlar, web saytlar va mini applar yasayman.",
             live: 'Ishlamoqda', code: 'Kod tayyor', yt_d: "TOIROV PRIME strimlarida Telegram bot yasaymiz va Kali Linux (kiberxavfsizlik) o'rganamiz.", yt_b: 'YouTube kanalga o\'tish',
             f_n: 'Ismingiz', f_c: 'Telegram yoki telefon', f_m: 'Qanday bot yoki sayt kerak?', f_s: 'Yuborish', sent: 'Yuborildi, tez orada javob beraman!', fb: 'Telegram ochildi, xabarni u yerda yuboring.', foot: 'Bot buyurtma qilish:' },
         ru: { ph: ['Full stack разработчик', 'Telegram-боты', 'Веб-сайты', 'Telegram Mini Apps'], m1: 'Заказать', m2: 'Проекты', s1: 'ботов', s2: 'языков перевода', s3: 'языка погоды',
             h_sk: 'Навыки', h_pc: 'Как я работаю', h_pk: 'Пакеты', h_fq: 'Вопросы', more: 'Читать статью →', skip: 'нажмите, чтобы пропустить', ttl: 'Тоиров Дийорбек | Разработчик Telegram-ботов', dsc: 'Full stack разработчик: Telegram-боты, сайты и Telegram Mini Apps.', h_pr: 'Проекты', h_sv: 'Услуги', h_yt: 'YouTube', h_ar: 'Статьи', h_te: 'Терминал', h_co: 'Напишите',
-            note: 'От $5 · 3–14 дней · гарантия качества. API-ключи и сервер оплачиваются отдельно.', order: 'Заказать', about: 'Тоиров Дийорбек: full stack разработчик. Делаю Telegram-ботов, сайты и мини-приложения.',
+            note: 'От $50 · 3–14 дней · гарантия качества. API-ключи и сервер оплачиваются отдельно.', order: 'Заказать', about: 'Тоиров Дийорбек: full stack разработчик. Делаю Telegram-ботов, сайты и мини-приложения.',
             live: 'Работает', code: 'Код готов', yt_d: 'На стримах TOIROV PRIME делаем Telegram-ботов и изучаем Kali Linux (кибербезопасность).', yt_b: 'Перейти на YouTube',
             f_n: 'Ваше имя', f_c: 'Telegram или телефон', f_m: 'Какой бот или сайт нужен?', f_s: 'Отправить', sent: 'Отправлено, скоро отвечу!', fb: 'Открылся Telegram, отправьте сообщение там.', foot: 'Заказать бота:' },
         en: { ph: ['Full stack developer', 'Telegram bots', 'Websites', 'Telegram Mini Apps'], m1: 'Order now', m2: 'Projects', s1: 'bot projects', s2: 'translation languages', s3: 'weather languages',
             h_sk: 'Skills', h_pc: 'How I work', h_pk: 'Packages', h_fq: 'FAQ', more: 'Read the full article →', skip: 'click to skip', ttl: 'Toirov Diyorbek | Telegram bot developer', dsc: 'Full stack developer: Telegram bots, websites and Telegram Mini Apps.', h_pr: 'Projects', h_sv: 'Services', h_yt: 'YouTube', h_ar: 'Articles', h_te: 'Terminal', h_co: 'Get in touch',
-            note: 'From $5 · 3–14 days · quality guaranteed. API keys and server costs are separate.', order: 'Order now', about: 'Toirov Diyorbek: full stack developer. I build Telegram bots, websites and mini apps.',
+            note: 'From $50 · 3–14 days · quality guaranteed. API keys and server costs are separate.', order: 'Order now', about: 'Toirov Diyorbek: full stack developer. I build Telegram bots, websites and mini apps.',
             live: 'Live', code: 'Code ready', yt_d: 'On TOIROV PRIME streams we build Telegram bots and learn Kali Linux (cybersecurity).', yt_b: 'Open YouTube channel',
             f_n: 'Your name', f_c: 'Telegram or phone', f_m: 'What bot or site do you need?', f_s: 'Send', sent: "Sent, I'll reply soon!", fb: 'Telegram opened, send the message there.', foot: 'Order a bot:' },
     },
